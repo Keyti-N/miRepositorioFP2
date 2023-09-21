@@ -1,0 +1,23 @@
+//Laboratorio Nro 1 Ejercicio1
+// Autor: Keyti Niebles
+import java.util.*; 
+public class Soldaditos1 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Ingrese el nombre del primer soldado");
+		String soldado1 = sc.nextLine();
+		System.out.println("Ingrese el nombre del segundo soldado");
+		String soldado2 = sc.nextLine();
+		System.out.println("Ingrese el nombre del tercer soldado");
+		String soldado3 = sc.nextLine();
+		System.out.println("Ingrese el nombre del cuarto soldado");
+		String soldado4 = sc.nextLine();
+		System.out.println("Ingrese el nombre del quinto soldado");
+		String soldado5 = sc.nextLine();
+
+		System.out.println("Los soldados son: " + soldado1 +", " + soldado2 + " ," + soldado3 + " ," +
+		soldado4 + " ,"+ soldado5);
+	}
+
+}
