@@ -1,0 +1,108 @@
+import java.util.*; 
+public class DemoBatalla {
+
+	public static void main(String[] args) {
+		Nave [] misNaves = new Nave[10];
+		Scanner sc = new Scanner(System.in);
+		String nomb, col;
+		int fil, punt;
+		boolean est;
+		
+		for (int i = 0; i < misNaves.length; i++) {
+			System.out.println("Nave " + (i+1));
+			System.out.print("Nombre: ");
+			nomb = sc.next();
+			System.out.println("Fila ");
+			fil = sc.nextInt();
+			System.out.print("Columna: ");
+			col = sc.next();
+			System.out.print("Estado: ");
+			est = sc.nextBoolean();
+			System.out.print("Puntos: ");
+			punt = sc.nextInt();
+			misNaves[i] = new Nave(); //Se crea un objeto Nave y se asigna su referencia a misNaves
+			misNaves[i].setNombre(nomb);
+			misNaves[i].setFila(fil);
+			misNaves[i].setColumna(col);
+			misNaves[i].setEstado(est);
+			misNaves[i].setPuntos(punt);
+		}
+		System.out.println("\nNaves creadas:");
+		mostrarNaves(misNaves);
+		mostrarPorNombre(misNaves);
+		mostrarPorPuntos(misNaves);
+		System.out.println("\nNave con mayor número de puntos: " + mostrarMayorPuntos(misNaves));
+		System.out.println("Nuevo orden aleatorio: ");
+		Nave[] flotaAle = arregloAleatorio(misNaves); 
+		for(int i = 0; i < flotaAle.length-1; i++) {
+			System.out.println(flotaAle[i]);
+		}
+		}
+		//Método para mostrar todas las naves
+		public static void mostrarNaves(Nave [] flota){
+			for(int i = 0; i < flota.length; i++) {
+				System.out.println(flota[i]);
+			}
+		}
+		//Método para mostrar todas las naves de un nombre que se pide por teclado
+		public static void mostrarPorNombre(Nave [] flota){
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Ingresar el nombre a buscar");
+			String nombre = sc.next(); 
+			for(int i = 0; i < flota.length; i++) {
+				if((flota[i].getNombre()).equals(nombre)) {
+					System.out.println(flota[i]);
+				}
+			}
+		}
+		//Método para mostrar todas las naves con un número de puntos inferior o igual
+		//al número de puntos que se pide por teclado
+		public static void mostrarPorPuntos(Nave [] flota){
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Ingresar el numero de puntos que busca:");
+			int puntosBus = sc.nextInt(); 
+			for(int i = 0; i < flota.length; i++) {
+				if(flota[i].getPuntos() <= puntosBus ) {
+					System.out.println(flota[i]);
+				}
+			}
+		}
+		//Método que devuelve la Nave con mayor número de Puntos
+		public static Nave mostrarMayorPuntos(Nave [] flota){
+			int puntosMax = flota[0].getPuntos();
+			int indice = 0; 
+			for(int i = 0; i < flota.length; i++) {
+				if(flota[i].getPuntos() > puntosMax) {
+					puntosMax = flota[i].getPuntos();
+					indice = i; 
+				}
+			}
+			return flota[indice];
+		}
+
+		public static Nave[] arregloAleatorio (Nave[] flota) {
+			Nave[] flotaAl = new Nave[flota.length];
+			int[] numSorteados = new int[flota.length];
+			for(int i = 0; i < numSorteados.length; i++) {
+				numSorteados[i] = -1;
+			}
+			int cantNum = 0; 
+			while(cantNum < flota.length) {
+				int numAl = (int)(Math.random()*flota.length);
+				for(int i = 0; i < numSorteados.length; i++) {
+					while(numAl == numSorteados[i]) {
+						numAl = (int)(Math.random()*flota.length);
+					}
+				}
+				numSorteados[cantNum] = numAl;
+				cantNum++;
+			}
+			for(int i = 0; i < numSorteados.length; i++) {
+				flotaAl[i] = flota[numSorteados[i]];
+			}
+			return flotaAl; 
+		}
+		
+
+
+}
