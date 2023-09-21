@@ -1,0 +1,28 @@
+//Laboratorio Nro 1 Ejercicio2
+// Autor: Keyti Niebles
+import java.util.*; 
+public class Soldaditos2 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Ingresar los nombres y nivel de vida de 5 soldados");
+		System.out.println("Soldado1, nombre y nivel de vida ");
+		String nombre1 = sc.next();
+		int nivelVida1 = sc.nextInt();
+		System.out.println("Soldado2, nombre y nivel de vida ");
+		String nombre2 = sc.next();
+		int nivelVida2 = sc.nextInt();
+		System.out.println("Soldado3, nombre y nivel de vida ");
+		String nombre3 = sc.next();
+		int nivelVida3 = sc.nextInt();
+		System.out.println("Soldado4, nombre y nivel de vida ");
+		String nombre4 = sc.next();
+		int nivelVida4 = sc.nextInt();
+		System.out.println("Soldado5, nombre y nivel de vida ");
+		String nombre5 = sc.next();
+		int nivelVida5 = sc.nextInt();
+		System.out.println("Soldado 1 : " + nombre1 + " .Nivel de vida: "+ nivelVida1+ " Soldado 2 : " + nombre2 + " .Nivel "
+				+ "de vida: "+ nivelVida2 + " Soldado 3: " + nombre3 + " .Nivel de vida: " + nivelVida3 + " Soldado 4 : " + 
+				nombre4 + " .Nivel de vida: "+ nivelVida4 + " Soldado 5 : " + nombre5 + " .Nivel de vida: "+ nivelVida5);
+		sc.close(); 
+	}
+}
