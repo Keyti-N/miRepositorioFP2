@@ -1,0 +1,22 @@
+//Laboratorio3-Ejercico2y3
+//Autor: Keyti Niebles
+public class Soldado {
+	private String nombre;
+	private int nivel;
+	public void setName(String n) {
+		nombre = n; 
+	}
+	public void setVida(int vida) {
+		nivel = vida;
+	}
+	public String getName() {
+		return nombre;
+	}
+	public int getVida() {
+		return nivel; 
+	}
+	public String toString() {
+		return "\nNombre: "+ getName()+ "\tNivel de vida: "+ getVida();
+	}
+
+}
