@@ -1,0 +1,19 @@
+//Laboratorio Nro1 Ejercicio 3
+//Autor: Keyti Niebles 
+import java.util.*;
+public class Soldaditos3 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String[] soldados = new String[5];
+		for(int i = 0; i < soldados.length; i++) {
+			System.out.println("Ingrese el nombre del soldado "+ (i+1)+ ":");
+			soldados[i] = sc.next();
+		}
+		System.out.println("El nombre de los soldados son: ");
+		for(int i = 0; i < soldados.length; i++) {
+			System.out.print(soldados[i]+ " ");
+		}
+		sc.close(); 
+	}
+
+}
