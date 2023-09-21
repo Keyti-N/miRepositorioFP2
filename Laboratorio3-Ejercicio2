@@ -1,0 +1,24 @@
+//Laboratorio3-Ejercicio2
+//Autor: Keyti Niebles
+import java.util.*;
+public class Soldado4 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Soldado[] lista = new Soldado[5];
+		for(int i = 0; i < lista.length; i++) {
+			lista[i] = new Soldado(); 
+			System.out.println("Ingrese el nombre del soldado "+ (i+1)+" :");
+			String n = sc.next();
+			lista[i].setName(n);
+			System.out.println("Ingrese el nicel de vida del soldado "+ (i+1)+" :");
+			int ni = sc.nextInt();
+			lista[i].setVida(ni);
+		}
+		System.out.println("Los soldados son:");
+		for(int i = 0; i < lista.length; i++) {
+			System.out.println(lista[i]);
+		}
+	}
+
+}
