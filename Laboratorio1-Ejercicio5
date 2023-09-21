@@ -1,0 +1,35 @@
+//Laboratorio Nro 1 Ejercicio 5
+//Autor: Keyti Niebles
+public class Soldaditos5 {
+	public static void main(String[] args) {
+		int numEjercito1 = (int) ((Math.random() *5)+1);
+		int numEjercito2 = (int) ((Math.random() * 5)+ 1);
+		String[] ejercito1 = new String[numEjercito1];
+		String[] ejercito2 = new String[numEjercito2];
+		iniciar(ejercito1);
+		iniciar(ejercito2);
+		System.out.println("Ejercito 1: ");
+		imprimir(ejercito1);
+		System.out.println("Ejercito 2: ");
+		imprimir(ejercito2);
+		if(numEjercito1 == numEjercito2) {
+			System.out.println("¡Tenemos un empate! ");
+		}else if(numEjercito1 > numEjercito2) {
+			System.out.println("El ganador es el ejercito 1");
+		}else {
+			System.out.println("El ganador es el ejercito 2");
+		}
+	}
+	public static void iniciar( String[] a) {
+		for(int i = 0; i < a.length; i++) {
+			a[i] = "Soldado" + i;
+		}
+	}
+	public static void imprimir(String[] a) {
+		for(int i = 0; i < a.length; i++) {
+			System.out.print("-" + a[i]);
+		}
+		System.out.println("\n"); 
+	}
+
+}
